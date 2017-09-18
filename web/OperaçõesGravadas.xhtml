@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    
+    <h:head>
+        <title>Consulta de Transações</title>
+    </h:head>
+    
+    <h:body>
+        <h:dataTable value="#{consultaTransacaoBean.mercadorias}" var="mercadoria"
+                     rendered="#{not empty consultaTransacaoBean.mercadorias}">
+                
+            <f:facet name="header">Lista de Transações</f:facet>
+                    
+                <h:column>
+                    <div style="width: 100%; text-align: center;">
+                    <f:facet name="header">Nome da Mercadoria</f:facet>
+                    #{mercadoria.nome_merc}
+                    </div>
+                </h:column>
+                    
+                <h:column>
+                    <div style="width: 100%; text-align: center;">
+                    <f:facet name="header">Tipo da Mercadoria</f:facet>
+                    #{mercadoria.tipo_merc}
+                    </div>
+                </h:column>
+                    
+                <h:column>
+                    <div style="width: 100%; text-align: center;">
+                    <f:facet name="header">Quantidade</f:facet>
+                    #{mercadoria.qtde}
+                    </div>
+                </h:column>
+                    
+                <h:column>
+                    <div style="width: 100%; text-align: center;">
+                    <f:facet name="header">Preço</f:facet>
+                    #{mercadoria.preco}
+                    </div>
+                </h:column>
+                    
+                <h:column>
+                    <div style="width: 100%; text-align: center;">
+                    <f:facet name="header">Tipo da Transação</f:facet>
+                    #{mercadoria.tipo_negocio}
+                    </div>
+                </h:column>
+        </h:dataTable>
+    </h:body>
+</html>
+
